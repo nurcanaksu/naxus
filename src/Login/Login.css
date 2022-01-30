@@ -1,0 +1,7 @@
+.login
+{
+    display: grid;
+    place-items: center;
+    height: 100wh; /*yukardan aşağı sayfayı kaplıyor */
+    width: 100%;
+}

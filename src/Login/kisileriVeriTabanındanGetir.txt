@@ -1,0 +1,101 @@
+// import React from "react";
+// import { useState } from "react";
+// import { Button } from "semantic-ui-react";
+// import database from "../firebase";
+// import firebase from "firebase";
+// import { useEffect } from "react";
+// import Users from "./Users";
+
+// function KayitOl() {
+//   const [name, setName] = useState("");
+//   const [surname, setSurname] = useState("");
+//   const [users, setUsers] = useState([]);
+
+  
+//   //onSnapshot: her satırı tek tek alıyor
+//   useEffect(() => {
+//     //veritabanından verileri çekiyor
+//     database.collection("users").onSnapshot((snapshot) =>
+//       setUsers(
+//         snapshot.docs.map((doc) => ({
+//           id: doc.id,
+//           data: doc.data(),
+//         }))
+//       )
+//     );
+//   }, []); //boş dizi vermezsem,sürekli döner.
+
+//   console.log(users);
+
+//   console.log();
+//   const add = (e) => {
+//     e.preventDefault(); //sayfa yenilenmesin diye uaptık
+//     database.collection("users").add({
+//       name: name,
+//       surname: surname,
+//       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+//     });
+//     setName("");
+//     setSurname("");
+//   };
+
+//   return (
+//     <div>
+//       <form>
+//          Ad :
+//         <input
+//           type="text"
+//           value={name}
+//           onChange={(e) => setName(e.target.value)}
+//         />
+//           Soyad :
+//         <input
+//           type="text"
+//           value={surname}
+//           onChange={(e) => setSurname(e.target.value)}
+//         />
+//         <Button onClick={add}>Ekle</Button>
+//       </form>
+
+//       <div>
+//         {users.map(({ id, data }) => (
+//           <Users
+//             key={id}
+//             id={id}
+//             name={data.name}
+//             surname={data.surname}
+//             guncellenenisim={name}
+//             guncellenensoyad={surname}
+//             setName={setName}
+//             setSurname={setSurname}
+//           />
+//         ))}
+//       </div>
+
+//       {/* <div>
+//         {users.map(({ id, data: { name, surname } }) => (
+//           <Users
+//             key={id}
+//             id={id}
+//             name={name}
+//             surname={surname}
+//             setName={setName}
+//             setSurname={setSurname}
+//           />
+//         ))}
+//       </div> */}
+
+//       {/* <div>
+//         {users.map((item) => (
+//           <ul>
+//             <li>
+//               {item.data.name} {item.data.surname}
+//             </li>
+//           </ul>
+//         ))}
+//       </div> */}
+//     </div>
+//   );
+// }
+
+// export default KayitOl;

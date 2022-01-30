@@ -1,0 +1,35 @@
+/* 
+@media all and (min-width: 480px) {
+  .Login {
+    padding:0;
+  }
+ 
+  .Login form {
+    margin: 0 auto;
+    max-width: 250px;
+  }
+} */
+/* 
+.ui.main.container {
+  margin-top: 15em;
+  margin-bottom: 10em;
+}
+
+.App {
+  text-align: center; 
+}
+ */
+
+
+.App {
+  text-align: center;
+  font-family: "source_sans_proregular ";
+
+}
+
+.ui.main.container
+{
+  margin-top: 2em;
+}
+
+ 
