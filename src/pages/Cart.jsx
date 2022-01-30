@@ -14,7 +14,7 @@ export const Cart = () => {
       
     <>
       <>
-        {shoppingCart.length !== 0 && <h1>Cart</h1>}
+        {shoppingCart.length !== 0 && <h1>SEPETİM</h1>}
         <div className="cart-container">
           {shoppingCart.length === 0 && (
             <>

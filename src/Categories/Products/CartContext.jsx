@@ -4,7 +4,6 @@ import { CartReducer } from './CartReducer';
 
 export const CartContext=createContext();
 
-
 export const CartContextProvider = (props) => {
 
     const[cart,dispatch]=useReducer(CartReducer,{shoppingCart:[],totalPrice:0,totalQty:0})

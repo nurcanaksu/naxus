@@ -5,8 +5,10 @@ import { NavLink } from "react-router-dom";
 import { Grid, Form, Menu, Checkbox, Rating, Header } from "semantic-ui-react";
 import Radio from "@material-ui/core/Radio";
 import { useState } from "react";
+import { CartContext } from '../CartContext';
 export const AccessoriesPage = () => 
 {
+    const {dispatch} = useContext(CartContext)
     const{accessories}=useContext(ProductsContext);
     const baslikstyle = {
         fontSize: "14px",
@@ -185,7 +187,16 @@ export const AccessoriesPage = () =>
                     <div className="product-description">
                       {product.ProductDescription}
                     </div>
-                    <button className="addcart-btn">Sepete Ekle</button>
+                    <button className="addcart-btn"
+                     onClick={()=>
+                    {
+                      dispatch({
+                        type:'ADD_TO_CART',
+                        id:product.ProductID,
+                        product
+                      })
+                    }}
+                    >Sepete Ekle</button>
                   </div>
                 ))}
               </div>

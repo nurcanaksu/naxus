@@ -4,8 +4,10 @@ import { Grid, Form, Menu, Checkbox, Rating, Header } from "semantic-ui-react";
 import { ProductsContext } from "../ProductsContext";
 import Radio from "@material-ui/core/Radio";
 import { useState } from "react";
+import { CartContext } from "../CartContext";
 export const TviesPage = () => {
-  const { tvies } = useContext(ProductsContext);
+  const{dispatch}=useContext(CartContext) //sepete ürün eklemek için
+  const { tvies } = useContext(ProductsContext);//veritabanından ürünleri getirmek için
   console.log(tvies);
 
   const baslikstyle = {
@@ -168,8 +170,8 @@ export const TviesPage = () => {
           {tvies.length !== 0 && <h1>TELEVİZYONLAR</h1>}
           <div className="products-container">
             {tvies.length === 0 && <div>Lütfen Bekleyiniz</div>}
-            {tvies.map((tv) => (
-              <div className="product-card" key={tv.ProductID}>
+            {tvies.map((product) => (
+              <div className="product-card" key={product.ProductID}>
                 <Rating
                   as="h1"
                   style={ratingStyle}
@@ -178,19 +180,28 @@ export const TviesPage = () => {
                   maxRating={1}
                 ></Rating>
                 <div className="product-img">
-                  <img src={tv.ProductImg} alt="not found" />
+                  <img src={product.ProductImg} alt="not found" />
                 </div>
-                <div className="product-name">{tv.ProductName}</div>
+                <div className="product-name">{product.ProductName}</div>
                 <div className="product-price">
-                  {tv.ProductPrice}.00 TL
+                  {product.ProductPrice}.00 TL
                 </div>
                 <div>
                   <Rating icon="star" defaultRating={3} maxRating={5} />
                 </div>
                 <div className="product-description">
-                  {tv.ProductDescription}
+                  {product.ProductDescription}
                 </div>
-                <button className="addcart-btn">Sepete Ekle</button>
+                <button className="addcart-btn"
+                 onClick={()=>
+                {
+                  dispatch({
+                    type:'ADD_TO_CART',
+                    id:product.ProductID,
+                    product
+                  })
+                }}
+                >Sepete Ekle</button>
               </div>
             ))}
           </div>

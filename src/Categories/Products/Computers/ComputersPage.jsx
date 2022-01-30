@@ -7,8 +7,7 @@ import { ProductsContext } from "../ProductsContext";
 import { CartContext } from "../CartContext";
 
 export const ComputersPage = () => {
-
-  const {dispatch}= useContext(CartContext)//sepete eklemek için 
+  const { dispatch } = useContext(CartContext); //sepete eklemek için
 
   const { computers } = useContext(ProductsContext); //ürünleri listelemek için
   console.log(computers);
@@ -190,12 +189,18 @@ export const ComputersPage = () => {
                 <div className="product-description">
                   {product.ProductDescription}
                 </div>
-                <button className="addcart-btn" 
-                       onClick={()=>{dispatch({type:'ADD_TO_CART',
-                                       id: product.ProductID,
-                                       product})}}>
-                         
-                         Sepete Ekle</button>
+                <button
+                  className="addcart-btn"
+                  onClick={() => {
+                    dispatch({
+                      type: "ADD_TO_CART",
+                      id: product.ProductID,
+                      product,
+                    });
+                  }}
+                >
+                  Sepete Ekle
+                </button>
               </div>
             ))}
           </div>

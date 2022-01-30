@@ -236,8 +236,26 @@ h1 {
   border-radius: 3px;
   position: relative;
   top: -5px;
-  left: 60px;
-  right: 10px;
+  left: 0px;
+  right: 0px;
   display: flex;
   justify-content: center;
- 
+  align-items: center;
+}
+
+.navbox .rightside span .navlink {
+  text-decoration: none;
+  color: #e4e4e4
+}
+.navbox .rightside .relative{
+   position: relative;
+}
+.navbox .rightside {
+ display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.navbox .rightside span {
+  margin-right: 0px;
+}

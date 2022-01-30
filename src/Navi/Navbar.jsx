@@ -12,7 +12,6 @@ import {
   Container,
 } from "semantic-ui-react";
 import { CartContext } from "../Categories/Products/CartContext";
-import { cart } from "react-icons-kit/entypo/cart";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -49,12 +48,11 @@ function Navbar() {
         </Menu.Item>
         <Menu.Item>
           <div className="rightside">
-          <span><Link to="/cart" className='navlink'><Icon icon={cart} /></Link></span>
+          <span><Link to="/cart" className='navlink'><Icon name="shopping cart"/>Sepetim</Link></span>
             <div className="relative">
               <span className="no-of-products">{totalQty} </span>
             </div>
           </div>
-
           {/* <Button className= "no-of-products" backgroundcolor="grey" color="black" as={NavLink} to="/cart">
             <Icon name="shopping cart" />
             Sepetim {totalQty} 
@@ -70,4 +68,21 @@ function Navbar() {
                 to="/loginAndSignupPage" //burası LoginScreendi
                 style={{ color: "black" }}
                 text="Giriş Yap"
-                icon="si
+                icon="sign-in"
+              />
+              <Dropdown.Item
+                as={NavLink}
+                to="/signup"
+                style={{ color: "black" }}
+                text="Kayıt Ol"
+                icon="signup"
+              />
+            </Dropdown.Menu>
+          </Dropdown>
+        </Menu.Item>
+      </Menu>
+      <Divider />
+    </div>
+  );
+}
+export default Navbar;
