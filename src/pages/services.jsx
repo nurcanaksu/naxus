@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Button,
   Grid,
@@ -76,9 +75,6 @@ export default function services() {
         Satış Kanalları
         </Button>
       </Button.Group> 
-
-      
-     
     </div>
   );
 }
