@@ -82,7 +82,8 @@ h1 {
 }
 
 .products-container .product-card .addcart-btn {
-  background-color: #f57224;
+  /* //buton rengiiiiiiii */
+  background-color: darkmagenta; 
   color: #fff;
   border: hidden;
   cursor: pointer;
