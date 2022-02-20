@@ -6,7 +6,7 @@ import firebase from "firebase";
 
 function LoginAndSİgnUpPage() {
 
-    const [user, setUser]=useState(" ");
+    const [user, setUser]=useState(null);
 
     useEffect(() => {
     auth.onAuthStateChanged((authUser) =>  //durum değişirse

@@ -15,6 +15,7 @@ import {
 } from "./Categories/Products/ProductsContext";
 import { BrowserRouter, Switch } from "react-router-dom";
 import { CartContextProvider } from "./Categories/Products/CartContext";
+import database, { auth } from "./firebase";
 
 // export default class App extends Component {
 //   state2 = {
@@ -54,13 +55,14 @@ import { CartContextProvider } from "./Categories/Products/CartContext";
 // }
 
 export class App extends Component {
+
   render() {
     return (
       <div className="App">
         <ProductsContextProvider>
           <CartContextProvider>
             <BrowserRouter>
-              <Navbar /> 
+              <Navbar/> 
               <br />
               <br />
               <Navi />

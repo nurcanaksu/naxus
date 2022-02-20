@@ -1,4 +1,88 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import {Link} from "react-router-dom";
+import database, { auth } from "../firebase";
+
+export const SignUp = (props) => {
+  
+  //defining state using useState hook
+  const[name,setName] = useState('');
+  const[surname,setSurname]=useState('');
+  const[email, setEmail] = useState('');
+  const[password, setPassword]=useState('');
+  const[error,setError]=useState('');
+
+  const Signup =(e)=>
+  {
+    e.preventDefault();
+    //veritabanına ekleme kısmı
+     auth.createUserWithEmailAndPassword(email,password).then((cred)=>
+     {
+       database.collection('kullanicilar').doc(cred.user.uid).set({
+         Name:name,
+         Surname:surname,
+         Email:email,
+         Password:password,
+       }).then(()=>{
+         setName('');
+         setSurname('');
+         setEmail('');
+         setPassword('');
+         setError('');
+         props.history.push('/loginAndSignUpPage');
+       }).catch(err=>setError(err.message));
+     }).catch(err=>setError(err.message));
+  } 
+
+  return (
+    <div className="container">
+      <br />
+      <h2>Kayıt Ol </h2>
+      <hr />
+      <form autoComplete="off" className="form-group" onSubmit={Signup}>
+        <label htmlFor="Name">Adı: </label>
+        <br/>
+        <input type="text" className="form-control" required 
+         onChange={(e)=>setName(e.target.value)} value={name}
+        />
+        <br/>
+        <label htmlFor="Surname">Soyadı: </label>
+        <br/>
+        <input type="text" className="form-control" required 
+         onChange={(e)=>setSurname(e.target.value)} value={surname}
+        />
+        <br/>
+        <label htmlFor="Email">E-mail : </label>
+        <br/>
+        <input type="email" className="form-control" required
+          onChange={(e)=>setEmail(e.target.value)} value={email}
+        />
+        <br/>
+        <label htmlFor="Password">Şifre:</label>
+        <br/>
+        <input type="password" className="form-control" required
+         onChange={(e)=>setPassword(e.target.value)} value={password}
+         />
+        <br/>
+        <button type="submit" className="btn btn-success btn-md mybtn">Kayıt Ol </button>
+      </form>
+      {error && <div className="error-msg" > {error} </div>}
+      <br/>
+      <span>Bir hesabınız var mı? Giriş Yapın
+         <Link to='/loginAndSignUpPage'> Buradan</Link> 
+      </span>
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+
+/* import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import { NavLink } from "react-router-dom";
 import { Button, Container } from "semantic-ui-react";
@@ -32,9 +116,6 @@ const SignUp = () => {
     setPasswordError(" ");
     setEmailError(" ");
   }
-
-  
-
 
   const handleSignup = () => {
     clearErrors();

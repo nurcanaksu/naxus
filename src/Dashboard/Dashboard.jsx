@@ -6,7 +6,7 @@ import brands from "../pages/brands";
 import help from "../pages/help";
 import naxusClub from "../pages/naxusClub";
 import opportunityOfTheDay from "../pages/opportunityOfTheDay";
-import SignUp from "../Login/SignUp";
+import {SignUp} from "../Login/SignUp";
 import myFavorite from "../pages/myFavorite";
 import {Cart} from "../pages/Cart";
 import allCampaings from "../pages/allCampaings";
@@ -24,7 +24,11 @@ import { ComputersPage } from "../Categories/Products/Computers/ComputersPage";
 import { AddToComputer } from "../Categories/Products/Computers/AddToComputer";
 import { AccessoriesPage } from "../Categories/Products/Accessories/AccessoriesPage";
 import { PhonesPage } from "../Categories/Products/Phones/PhonesPage";
+
+
 export default function Dashboard() {
+
+ 
   return (
     <Grid>
       <Grid.Row>

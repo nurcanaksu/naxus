@@ -260,3 +260,11 @@ h1 {
 .navbox .rightside span {
   margin-right: 0px;
 }
+
+
+.error-msg
+{
+   color:"red";
+   font-size: 12px;
+   font-weight: 600;
+}
