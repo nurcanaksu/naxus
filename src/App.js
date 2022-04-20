@@ -66,9 +66,11 @@ export class App extends Component {
               <br />
               <br />
               <Navi />
+              
               <Container>
                 <Dashboard className="App" />
               </Container>
+              <Footer />
             </BrowserRouter>
           </CartContextProvider>
         </ProductsContextProvider>

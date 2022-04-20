@@ -13,6 +13,8 @@ export default function clubKampanyalari() {
           to="/tumkampanyalar"
           animated
         >
+
+      
           <Button.Content visible>TÜM KAMPANYALAR</Button.Content>
           <Button.Content hidden>
             <Icon name="announcement" />

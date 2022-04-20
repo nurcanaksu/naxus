@@ -24,6 +24,7 @@ import { ComputersPage } from "../Categories/Products/Computers/ComputersPage";
 import { AddToComputer } from "../Categories/Products/Computers/AddToComputer";
 import { AccessoriesPage } from "../Categories/Products/Accessories/AccessoriesPage";
 import { PhonesPage } from "../Categories/Products/Phones/PhonesPage";
+import { Cashout } from "../pages/Cashout";
 
 
 export default function Dashboard() {
@@ -58,6 +59,7 @@ export default function Dashboard() {
             <Route exact path="/bilgisayarlar" component={ComputersPage} />
             <Route exact path="/televizyonlar" component={TviesPage} />
             <Route exact path="/telefonlar" component={PhonesPage}/>
+            <Route exact path="/cashout" component={Cashout}/> 
           </Grid.Column>
         </Grid.Column>
       </Grid.Row>

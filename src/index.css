@@ -268,3 +268,11 @@ h1 {
    font-size: 12px;
    font-weight: 600;
 }
+
+.success-msg{
+  background-color: green;
+  color: white;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}

@@ -4,32 +4,29 @@ import { CartContext } from "../Categories/Products/CartContext";
 import { ic_add } from 'react-icons-kit/md/ic_add'
 import { ic_remove } from 'react-icons-kit/md/ic_remove'
 import { iosTrashOutline } from 'react-icons-kit/ionicons/iosTrashOutline'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, NavLink, useHistory } from 'react-router-dom'
 import { Icon } from 'react-icons-kit'
 
 export const Cart = () => {
     const { shoppingCart, dispatch, totalPrice, totalQty } = useContext(CartContext);
     const history = useHistory();
   return (
-      
     <>
       <>
         {shoppingCart.length !== 0 && <h1>SEPETİM</h1>}
         <div className="cart-container">
           {shoppingCart.length === 0 && (
             <>
-            
               <div>
-                no items in your cart or slow internet causing trouble (Refresh
-                the page) or you are not logged in
+                sepetinizde ürün yok ya da yavaş internet problemi (Sayfayı yenileyin) ya da giriş yapın
               </div>
               <div>
-                <Link to="/">Return to Home page</Link>
+                <Link to="/">Anasayfaya geri dön..</Link>
               </div>
             </>
           )}
           {shoppingCart &&
-            shoppingCart.map((cart) => (
+            shoppingCart.map(cart => (
               <div className="cart-card" key={cart.ProductID}>
                 <div className="cart-img">
                   <img src={cart.ProductImg} alt="not found" />
@@ -41,12 +38,8 @@ export const Cart = () => {
                   TL {cart.ProductPrice}.00
                 </div>
 
-                <div
-                  className="inc"
-                  onClick={() =>
-                    dispatch({ type: "INC", id: cart.ProductID, cart })
-                  }
-                >
+                <div className="inc"
+                  onClick={() =>dispatch({ type: "INC", id: cart.ProductID, cart }) } >
                   <Icon icon={ic_add} size={24} />
                 </div>
 
@@ -77,19 +70,21 @@ export const Cart = () => {
             <div className="cart-summary">
               <div className="cart-summary-heading">Cart-Summary</div>
               <div className="cart-summary-price">
-                <span>Total Price</span>
+                <span>Toplam fiyat</span>
                 <span>{totalPrice}</span>
               </div>
               <div className="cart-summary-price">
-                <span>Total Qty</span>
+                <span>Toplam Miktar</span>
                 <span>{totalQty}</span>
               </div>
               <Link to="cashout" className="cashout-link">
                 <button
+                  as={NavLink}
+                  to="/cashout"
                   className="btn btn-success btn-md"
                   style={{ marginTop: 5 + "px" }}
                 >
-                  Cash on delivery
+                  Ödeme Yap
                 </button>
               </Link>
             </div>

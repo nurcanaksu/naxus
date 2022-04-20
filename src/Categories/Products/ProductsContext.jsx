@@ -13,8 +13,11 @@ export class ProductsContextProvider extends React.Component {
       accessories:[],
       phones:[]
     }
-
     
+//ComponentDidMount. Komponent Dom'a render edildikten sonra çalışan Event'ımızdır. 
+//Yani render işleminden sonra çalışır.
+// Not *=* ComponentDidMount'ta setState işlemi yapılırsa tekrardan Render işlemi yapılır.
+
     componentDidMount()
     {
      const prevProducts= this.state.computers;
@@ -129,8 +132,6 @@ export class ProductsContextProvider extends React.Component {
             }
         });
     });
-
-
     */
     render()
     {
