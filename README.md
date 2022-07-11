@@ -35,3 +35,20 @@ Tüm markaların bulunduğu ve bu markalara göre filtre yapılıp ürünlerin l
 modüldür
 ![marka](https://github.com/nurcanaksu/naxus/blob/main/public/images/projectPhotos/9.PNG)
 
+
+ Yazılım Dili
+Bu uygulama web üzerinden kullanılmak üzere geliştirildiği için JavaScript 
+framework’ü olan ReactJs ile kodlanmıştır.
+
+--Kullanılan Veri Tabanı--
+Firebase, Google tarafından mobil ve web uygulamaları oluşturmak için 
+geliştirilmiş ücretsiz bir platformdur. Kullanıcı girişlerinin olduğu ve verilerin 
+saklandığı birden fazla platformda geliştirilecek bir yazılım projeniz 
+varsa Firebase size bu konuda oldukça fayda sağlayacaktır.
+
+ --Kütüphane ve Çatılar--
+*Material-UI
+*Semantic UI React
+*Bootstrap
+
+
