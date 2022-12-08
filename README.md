@@ -5,7 +5,7 @@ ReactJS & Firebase
 Giriş Ekranı;
 Kullanıcılar sisteme kayıt olabilir,giriş yapabilir,Google ile giriş yapabilir(Firebase 
 authentication) bu işlemlerin yapıldığı modüldür
-![girisekrani](https://github.com/nurcanaksu/naxus/blob/main/public/images/projectPhotos/girisEkrani.PNG)
+![girisekranii](https://github.com/nurcanaksu/naxus/blob/main/public/images/projectPhotos/girisEkrani.PNG)
 
 Menü;
 ![menu](https://github.com/nurcanaksu/naxus/blob/main/public/images/projectPhotos/yanekran.PNG)
